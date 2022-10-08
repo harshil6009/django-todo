@@ -1,0 +1,18 @@
+    1
+    2  mkdir project1
+    3  cd project1/
+    4  git clone https://github.com/harshil6009/django-todo.git
+    5  ls
+    6  cd django-todo/
+    7  sudo apt-get update
+    8  sudo apt install python3-pip
+    9  pip3 install django
+   10  python3 manage.py migrate
+   11  vi todo/settings.py
+   12  vi todoApp/settings.py
+   13  python3 manage.py runserver
+   14  python manage.py migrate
+   15  python3 manage.py runserver
+   16  python3 manage.py migrate
+   17  python3 manage.py runserver 0.0.0.0:8000
+   18  history
