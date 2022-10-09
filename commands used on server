@@ -17,4 +17,50 @@
    15  python3 manage.py runserver
    16  python3 manage.py migrate
    17  python3 manage.py runserver 0.0.0.0:8000
+   18 nohup python3 manage.py runserver 0.0.0.0:8000 & (to run the APP in the back no logs you can see and command screen is available for you to use)
+   19 lsof -i:8000 (to see whats going on ON port 8000)
+   20 kill -9 8124(to kill the app use PID)
+   *******************Make Docker Image*******************************
+   sudo apt  install docker.io (if docker is not available in your system)
+   vi Dockerfile
+            FROM python:3
+            RUN pip install django==3.2
+            COPY . .  (. source  . destination)
+            RUN python3 manage.py migrate
+            CMD ["python3", "manage.py", "runserver","0.0.0.0:8000"]
+    saved by :wq
+    sudo docker build . -t todo-app (Build docker image)
+    sudo docker ps (to check if any docker file is running)
+    sudo docker run -p 8000:8000 XXXXXXXXX(docker ID)
+    sudo docker run -d -p 8000:8000 XXXXXXXXX(docker ID){To run the docker image in the background}
+    
+    *********************INSTALL JENKINS *******************************
+    
+    wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+(After the key is added the system will return with OK.)
+
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+(After both commands have been entered, run update so that apt will use the new repository.)
+
+sudo apt update
+sudo apt install jenkins
+sudo systemctl enable jenkins
+sudo systemctl start jenkins
+sudo systemctl status jenkins
+(OPEN CUSTOM TCP PORT 8080) TO LOGIN TO JENKINS
+sudo cat link for the password given on jenkins page (open browser by using AWS public IP: 8080)
+
+*********************ALL ABOVE COMMANDS ARE WASTE HOW ABOUT INSTALL JENKINS USING DOCKER*************************
+sudo docker pull jenkins/jenkins
+sudo docker run -d -p 80:8080 docker.io/jenkins/jenkins:latest
+
+what is Node: 
+
+
+    
+    
+    
+    
+    
+    
  
