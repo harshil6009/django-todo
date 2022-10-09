@@ -54,7 +54,8 @@ sudo cat link for the password given on jenkins page (open browser by using AWS 
 sudo docker pull jenkins/jenkins
 sudo docker run -d -p 80:8080 docker.io/jenkins/jenkins:latest
 
-what is Node: 
+what is Node: It is a environment which allows you to create a pipeline. 
+setup an agent on jenkins page : Node name: ToDo-app-dev
 
 
     
